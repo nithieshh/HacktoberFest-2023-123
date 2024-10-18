@@ -1,10 +1,12 @@
-# Create an empty dictionary
-my_dict = {}
+# Initialize an empty dictionary
+person_info = {}
 
 # Add key-value pairs to the dictionary
-my_dict['name'] = 'John'
-my_dict['age'] = 30
-my_dict['city'] = 'New York'
+person_info.update({
+    'name': 'John',
+    'age': 30,
+    'city': 'New York'
+})
 
-# Print the dictionary
-print(my_dict)
+# Print the dictionary in a formatted manner
+print(f"Dictionary contents: {person_info}")
