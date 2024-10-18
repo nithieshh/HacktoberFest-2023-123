@@ -21,22 +21,34 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
 ''')
 
-print("Welcome to treasure island")
-print("Your mission is to find the treasure")
+print("Welcome to Treasure Island!")
+print("Your mission is to find the treasure.\n")
 
-choice1 = input('You are at the crossroad, where do you want to go? Type "left" or "right" \n').lower()
+# First choice: Crossroad
+choice1 = input('You are at a crossroad, where do you want to go? Type "left" or "right" \n').lower()
 
 if choice1 == "left":
-    choice2 = input('You arrived at lake. There is an island in the middle. Do you want to "swim" or "wait" \n').lower()
-    if choice2 == "swim":
-        choice3 = input('You finally arrived at the Island. There is a house with three doors. "Red", "Green" and "Blue". Choose one door. \n').lower()
+    # Second choice: Lake
+    choice2 = input('You arrived at a lake. There is an island in the middle. Do you want to "swim" or "wait"? \n').lower()
+    
+    if choice2 == "wait":
+        # Third choice: Island with doors
+        choice3 = input('You finally arrived at the island. There is a house with three doors: "Red", "Green", and "Blue". Choose one door. \n').lower()
+        
         if choice3 == "red":
-            print("Game Over. You just fell into a dark hole...")
-        elif choice3 =="green":
-            print("Congratulation..You Win. You found the treasure worth $5 million")
+            print("Game Over! You just fell into a dark hole...")
+        elif choice3 == "green":
+            print("Congratulations! You Win. You found the treasure worth $5 million!")
+        elif choice3 == "blue":
+            print("Game Over! You entered a room with fire...")
         else:
-            print("Game Over! You entered the room with fire...")
+            print("Invalid choice. Game Over!")
+    elif choice2 == "swim":
+        print("Game Over! You are attacked by wild dogs while swimming...")
     else:
-        print("Game Over! You are attacked by wild dogs...")
+        print("Invalid choice. Game Over!")
+        
+elif choice1 == "right":
+    print("Game Over! You are attacked by a beast on the right path...")
 else:
-    print("Game Over! You are attacked by beast...")
+    print("Invalid choice. Game Over!")
