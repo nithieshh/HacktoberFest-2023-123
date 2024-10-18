@@ -1,19 +1,26 @@
-//wrapper class program
-
 import java.util.*;
-public class wrapper {
-   public static void main(String[]args)
-  {
-    wrapper x = new wrapper();
-    wrapper b = new wrapper();
-    x = null;
-    b = null;
-    new wrapper();
-    System.gc();
-  }
-  public void finalize()
-  {
-    System.out.print("this is GC ");
 
-  }
+public class WrapperClassExample {
+    public static void main(String[] args) {
+        WrapperClassExample x = new WrapperClassExample();
+        WrapperClassExample b = new WrapperClassExample();
+        x = null;
+        b = null;
+
+        // Request for garbage collection
+        System.gc();
+        
+        // Adding a small delay so garbage collection has time to complete (optional)
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Garbage collector called");
+        super.finalize();
+    }
 }
